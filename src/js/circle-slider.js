@@ -1,7 +1,10 @@
 class CircleSlider {
 
     constructor (option){
-        this.root = option.root;
+        if( typeof option === 'undefined' ){
+            option = {};
+        }
+        this.root = option.root || document.getElementById('circle-slider');
         this.radius = option.radius || 180;
         this.knobRadius= option.radius || 20;
         return this;
